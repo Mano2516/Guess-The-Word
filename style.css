@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+}
+:root {
+    --primary-color : #f44336;
+}
+body {
+    margin: 0;
+    background-color: #eee;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    min-height: 100vh;
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    margin: 0 0 50px;
+    background-color: #fff;
+}
+.guess-game {
+    text-align: center;
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .game-area{
+        .inputs{
+            > div {
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            span{
+                font-size: 30px;
+                margin-right: 15px;
+                font-weight: bold;
+            }
+        }
+        .disabled-inputs{
+            opacity: .5;
+            pointer-events: none;
+        }
+        input {
+            margin: 0 5px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 50px;
+            caret-color: var(--primary-color);
+            background-color: #fff;
+            border: none;
+            border-bottom: 3px solid #222;
+            &:focus{
+                outline-color: #ccc;
+            }
+            &.yes-in-place{
+                background-color: #f89e13;
+                border: #f89e13;
+                color: #fff;
+            }
+            &.not-in-place{
+                background-color: #18ba89;
+                border: #18ba89;
+                color: #fff;
+            }
+            &.no{
+                background-color: #27303f;
+                border: #27303f;
+                color: #fff;
+            }
+        }
+    }
+
+    .control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        margin: 30px auto;
+        gap: 10px;
+        .check {
+          background-color: var(--primary-color);
+          flex: 1;
+        }
+        .hint {
+          background-color: #009688;
+          width: fit-content;
+        }
+        button {
+          border: none;
+          font-size: 25px;
+          padding: 10px 15px;
+          border-radius: 6px;
+          color: white;
+          cursor: pointer;
+          font-weight: bold;
+        }
+        button:disabled {
+          background-color: black;
+          opacity: 0.4;
+          cursor: no-drop;
+        }
+      }
+    .key-colors {
+        .key-color{
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            .key {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                border-radius: 50%;
+                &.in-place{
+                    background-color: #f89e13;
+                }
+                &.not-in-place{
+                    background-color: #18ba89;
+                }
+                &.no{
+                    background-color: #27303f;
+                }
+            }
+            .key-text {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    span {
+      font-weight: bold;
+      /* display: block; */
+      font-size: 40px;
+      color: var(--primary-color);
+      text-transform: capitalize;
+      /* margin-top: 55px; */
+    }
+    p {
+      margin-top: 5px;
+    }
+  }
+footer{
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+}
